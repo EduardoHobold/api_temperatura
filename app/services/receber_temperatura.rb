@@ -15,8 +15,7 @@ class ReceberTemperatura
              "Temperatura_Minima": retorno["main"]["temp_min"], 
              "Velocidade_Vento": retorno["wind"]["speed"], 
              "Alvorada": Time.at(retorno["sys"]["sunrise"]), 
-             "Crepusculo": Time.at(retorno["sys"]["sunset"]), }
-
+             "Crepusculo": Time.at(retorno["sys"]["sunset"])}
 
     end
 end
