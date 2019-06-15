@@ -9,6 +9,7 @@ class ReceberTemperaturaPredict
         retorno = JSON.parse(Net::HTTP.get(URI(url)))
 
         dados = []
+
         retorno["list"].each do |hora|
             dados << {hora: Time.at(hora["dt"]), 
             clima:{Temperatura: hora["main"]["temp"],
@@ -16,9 +17,9 @@ class ReceberTemperaturaPredict
             Humidade: hora["main"]["humidity"], 
             Temperatura_Maxima: hora["main"]["temp_max"], 
             Temperatura_Minima: hora["main"]["temp_min"], 
-            Velocidade_Vento: hora["wind"]["speed"]}} 
-
-            
+            Velocidade_Vento: hora["wind"]["speed"],
+            Alvorada: Time.at(retorno["sys"]["sunrise"]), 
+            Crepusculo: Time.at(retorno["sys"]["sunset"])}} 
         end
         dados
     
