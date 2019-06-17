@@ -13,7 +13,7 @@ class ReceberTemperaturaPredict
         retorno["list"].each do |hora|
             dados << {hora: Time.at(hora["dt"]), 
             clima:{Temperatura: hora["main"]["temp"],
-            Descrição: horario["weather"][0]["description"],
+            Descrição: hora["weather"][0]["description"],
             Pressao: hora["main"]["pressure"],
             Humidade: hora["main"]["humidity"], 
             Temperatura_Maxima: hora["main"]["temp_max"], 

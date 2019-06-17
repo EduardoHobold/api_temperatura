@@ -9,6 +9,8 @@ class ReceberTemperatura
         retorno = JSON.parse(Net::HTTP.get(URI(url)))
 
         temp = {"Temperatura": retorno["main"]["temp"],
+             "Clima": retorno["weather"][0]["main"],
+             "Descrição": retorno["weather"][0]["description"],
              "Pressão": retorno["main"]["pressure"],
              "Humidade": retorno["main"]["humidity"], 
              "Temperatura_Maxima": retorno["main"]["temp_max"], 
