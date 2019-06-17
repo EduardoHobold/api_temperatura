@@ -12,7 +12,7 @@ class ReceberTemperaturaHora
 
         retorno["list"].each do |hora|
             dados << {hora: Time.at(hora["dt"]), 
-            clima:{Temperatura: hora["main"]["temp"],
+            Clima:{Temperatura: hora["main"]["temp"],
             Descrição: hora["weather"][0]["description"],
             Pressao: hora["main"]["pressure"],
             Humidade: hora["main"]["humidity"], 
