@@ -6,9 +6,15 @@ class BuscaTemperaturaController < ApplicationController
 
     end
 
-    def buscar_predict
+    def buscar_hora
 
-        render json: ReceberTemperaturaPredict.new.buscar_predict(temp_params[:cidade]), status: :ok 
+        render json: ReceberTemperaturaHora.new.buscar_hora(temp_params[:cidade]), status: :ok 
+
+    end
+
+    def buscar_dia
+
+        render json: ReceberTemperaturaDia.new.buscar_dia(temp_params[:cidade]), status: :ok 
 
     end
     
